@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drip Revival - Admin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Products Section -->
+        <div>
+            <div class="card">
+                <h1>Product Management</h1>
+                <button onclick="showProductModal()" style="margin-top: 1rem;">+ Add Product</button>
+                <div class="product-grid" id="productsContainer"></div>
+            </div>
+        </div>
+
+        <!-- Categories Sidebar -->
+        <div>
+            <div class="card">
+                <h2>Categories</h2>
+                <div class="category-list" id="categoriesList"></div>
+                <div style="margin-top: 1.5rem;">
+                    <input type="text" id="newCategory" placeholder="New category name">
+                    <button onclick="addCategory()" style="margin-top: 0.8rem;">Add Category</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 1.5rem;">Manage Product</h2>
+            <form id="productForm" onsubmit="handleProductSubmit(event)">
+                <input type="hidden" id="productId">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="productDescription" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" step="0.01" id="productPrice" required>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="productCategory" required></select>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <button type="submit">Save Product</button>
+                    <button type="button" onclick="closeModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

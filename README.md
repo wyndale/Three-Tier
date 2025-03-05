@@ -33,7 +33,7 @@ This project implements a **Three-Tier Architecture** for a clothing store manag
 ### Steps  
 1. **Clone the Repository**  
    ```bash  
-   git clone https://github.com/yourusername/clothing-store-three-tier.git
+   git clone https://github.com/wyndale/Three-Tier.git
    ```
 2. **Database Setup**
    - Update connection string in `server/appsettings.json`:
